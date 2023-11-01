@@ -54,10 +54,7 @@ function createMarkup(arr) {
     .join("");
 }
 
-let counterObserver = 0;
 function handlerLoadMore(entries, observer) {
-  counterObserver += 1;
-  console.log("counterObserver", counterObserver);
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       page++;
@@ -74,12 +71,4 @@ function handlerLoadMore(entries, observer) {
         .catch((err) => console.log(err));
     }
   });
-}
-
-document.addEventListener("scroll", handlerScroll);
-
-let counterScroll = 0;
-function handlerScroll() {
-  counterScroll += 1;
-  console.log("counterScroll", counterScroll);
 }
